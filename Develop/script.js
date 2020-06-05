@@ -20,9 +20,20 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialCharacters = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "}", "|", "~"];
 //combine arrays into new array
-var combinedArr = []
+var combinedArr = [];
+var passwordLength = "";
 //create a function that asks how many characters the user wants and returns number to a
 // variable. Also validates length and character selection
+function lengthFunc() {
+  var passwordLength = prompt("How many characters would you like your password to be? Value must be between 8 and 128");
+  console.log(passwordLength);
+   if (passwordLength >= 8 || passwordLength <= 128) {
+    return passwordLength;
+   }
+    console.log(passwordLength);
+  }
+lengthFunc();
+
 
 //write function prompts if user wants uppercase letters and moves array to pw array if yes
 
