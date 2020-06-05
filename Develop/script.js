@@ -66,10 +66,30 @@ console.log(combinedArr);
 
 //write function that prompt for if user wants numbers in their password 
 //moves array to pw array if yes
+function numbersFunc (){
+  var isNumber = prompt("Would you like numbers to be included?");
+  console.log(isNumber);
+  if (isNumber === "yes") {
+    combinedArr = combinedArr.concat([numbers]);
+  }
+  return combinedArr;
+}
+
+numbersFunc();
+console.log(combinedArr);
+
 
 
 //write function that prompts for if user wants special characters in their password
 //moves array to pw array if yes
+function specialFunc(){
+  var isSpecial = prompt("Would you like special characters to be included?");
+  console.log(isSpecial);
+  if (isSpecial === "yes"){
+    combinedArr = combinedArr.concat([specialCharacters]);
+  }
+  return combinedArr;
+}
 
 
 //write an if statement that alerts user if they didn't choose any characters
