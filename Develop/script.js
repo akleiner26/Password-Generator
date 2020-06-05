@@ -75,7 +75,7 @@ function specialFunc() {
 specialFunc()
 
 function isValid() {
-  while (combinedArr.length < 0) {
+  while (combinedArr.length <= 0) {
     alert("Must choose a valid character type. Please choose again.");
     lengthFunc();
     uppercaseFunc();
@@ -88,12 +88,12 @@ function isValid() {
 isValid ();
 
 function generatePassword() {
-  for (i = 0; i = passwordLength; i++) {
-    var password = combinedArr[Math.floor(Math.random() * i)];
+  for (i = 0; i < passwordLength; i++) {
+    password = password.concat(combinedArr[Math.floor(Math.random() * combinedArr.length)]);
     console.log(password);
     return password;
-    alert("Your Random Password is " + password);
   }
+  alert("Your Random Password is " + password);
 }
 console.log(password)
 
