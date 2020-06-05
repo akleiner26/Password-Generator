@@ -27,22 +27,22 @@ var passwordLength = "";
 function lengthFunc() {
   var passwordLength = prompt("How many characters would you like your password to be? Value must be between 8 and 128");
   console.log(passwordLength);
-   if (passwordLength >= 8 || passwordLength <= 128) {
+  if (passwordLength >= 8 || passwordLength <= 128) {
     return passwordLength;
-   }
-    console.log(passwordLength);
   }
+  console.log(passwordLength);
+}
 lengthFunc();
 
 
 //write function prompts if user wants uppercase letters and moves array to pw array if yes
-function uppercaseFunc(){
+function uppercaseFunc() {
   var isUpperCase = prompt("Would you like for uppercase letters to be included?");
   console.log(isUpperCase);
   if (isUpperCase.toLowerCase === "yes") {
     combinedArr = combinedArr.concat([uppercase]);
-    }
-    return combinedArr;
+  }
+  return combinedArr;
 }
 
 uppercaseFunc();
@@ -51,7 +51,7 @@ console.log(combinedArr);
 
 //write function that  prompts for if user wants lowercase letters moves array to
 // pw array if yes
-function lowercaseFunc (){
+function lowercaseFunc() {
   var isLowerCase = prompt("Would you like lowercase letters to be included?");
   console.log(isLowerCase);
   if (isLowerCase.toLowerCase === "yes") {
@@ -66,7 +66,7 @@ console.log(combinedArr);
 
 //write function that prompt for if user wants numbers in their password 
 //moves array to pw array if yes
-function numbersFunc (){
+function numbersFunc() {
   var isNumber = prompt("Would you like numbers to be included?");
   console.log(isNumber);
   if (isNumber === "yes") {
@@ -82,10 +82,10 @@ console.log(combinedArr);
 
 //write function that prompts for if user wants special characters in their password
 //moves array to pw array if yes
-function specialFunc(){
+function specialFunc() {
   var isSpecial = prompt("Would you like special characters to be included?");
   console.log(isSpecial);
-  if (isSpecial === "yes"){
+  if (isSpecial === "yes") {
     combinedArr = combinedArr.concat([specialCharacters]);
   }
   return combinedArr;
@@ -93,15 +93,24 @@ function specialFunc(){
 
 
 //write an if statement that alerts user if they didn't choose any characters
-function isValid (){
- while (combinedArr.length < 0){
-  alert("Must choose a valid character type. Please choose again.");
-  lengthFunc ();
-  uppercaseFunc ();
-  lowercaseFunc ();
-  numbersFunc ();
-  specialFunc ();
+function isValid() {
+  while (combinedArr.length < 0) {
+    alert("Must choose a valid character type. Please choose again.");
+    lengthFunc();
+    uppercaseFunc();
+    lowercaseFunc();
+    numbersFunc();
+    specialFunc();
   }
 }
 //write a function that pulls from the arrays and randomly compiles a password from
 //combined array
+
+function generatePassword() {
+  for (i = 0; i = passwordLength; i++) {
+    var password = combinedArr[Math.floor(Math.random() * i)];
+    console.log(password);
+    alert("Your Random Password is " + password);
+  }
+}
+
