@@ -36,6 +36,17 @@ lengthFunc();
 
 
 //write function prompts if user wants uppercase letters and moves array to pw array if yes
+function uppercaseFunc(){
+  var isUpperCase = prompt("Click Ok to include uppercase letters.");
+  console.log(isUpperCase);
+  if (isUpperCase.toLowerCase === "yes") {
+    combinedArr = combinedArr.concat([upperCase]);
+    }
+    return combinedArr;
+}
+
+uppercaseFunc();
+console.log(combinedArr);
 
 
 //write function that  prompts for if user wants lowercase letters moves array to
