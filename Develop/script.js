@@ -93,6 +93,16 @@ function specialFunc(){
 
 
 //write an if statement that alerts user if they didn't choose any characters
-
+function isValid (){
+  do {
+    alert("Must choose a valid character type. Please choose again.")
+    lengthFunc ();
+    uppercaseFunc ();
+    lowercaseFunc ();
+    numbersFunc ();
+    specialFunc ();
+  } while {
+    combinedArr.length < 0;
+  }
 //write a function that pulls from the arrays and randomly compiles a password from
 //combined array
