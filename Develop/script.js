@@ -37,10 +37,10 @@ lengthFunc();
 
 //write function prompts if user wants uppercase letters and moves array to pw array if yes
 function uppercaseFunc(){
-  var isUpperCase = prompt("Click Ok to include uppercase letters.");
+  var isUpperCase = prompt("Would you like for uppercase letters to be included?");
   console.log(isUpperCase);
   if (isUpperCase.toLowerCase === "yes") {
-    combinedArr = combinedArr.concat([upperCase]);
+    combinedArr = combinedArr.concat([uppercase]);
     }
     return combinedArr;
 }
@@ -51,6 +51,17 @@ console.log(combinedArr);
 
 //write function that  prompts for if user wants lowercase letters moves array to
 // pw array if yes
+function lowercaseFunc (){
+  var isLowerCase = prompt("Would you like lowercase letters to be included?");
+  console.log(isLowerCase);
+  if (isLowerCase.toLowerCase === "yes") {
+    combinedArr = combinedArr.concat([lowercase]);
+  }
+  return combinedArr;
+}
+
+lowercaseFunc();
+console.log(combinedArr);
 
 
 //write function that prompt for if user wants numbers in their password 
