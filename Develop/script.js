@@ -22,9 +22,9 @@ function lengthFunc() {
 
 
 function uppercaseFunc() {
-  var isUpperCase = prompt("Would you like for uppercase letters to be included?");
+  var isUpperCase = confirm("Would you like for uppercase letters to be included?");
   console.log(isUpperCase);
-  if (isUpperCase.toLowerCase() === "yes") {
+  if (isUpperCase) {
     combinedArr = combinedArr.concat(uppercase);
   }
   return combinedArr;
@@ -34,9 +34,9 @@ function uppercaseFunc() {
 console.log(combinedArr);
 
 function lowercaseFunc() {
-  var isLowerCase = prompt("Would you like lowercase letters to be included?");
+  var isLowerCase = confirm("Would you like lowercase letters to be included?");
   console.log(isLowerCase);
-  if (isLowerCase.toLowerCase() === "yes") {
+  if (isLowerCase) {
     combinedArr = combinedArr.concat(lowercase);
   }
   return combinedArr;
@@ -46,9 +46,9 @@ function lowercaseFunc() {
 console.log(combinedArr);
 
 function numbersFunc() {
-  var isNumber = prompt("Would you like numbers to be included?");
+  var isNumber = confirm("Would you like numbers to be included?");
   console.log(isNumber);
-  if (isNumber.toLowerCase() === "yes") {
+  if (isNumber) {
     combinedArr = combinedArr.concat(numbers);
   }
   return combinedArr;
@@ -58,9 +58,9 @@ function numbersFunc() {
 console.log(combinedArr);
 
 function specialFunc() {
-  var isSpecial = prompt("Would you like special characters to be included?");
+  var isSpecial = confirm("Would you like special characters to be included?");
   console.log(isSpecial);
-  if (isSpecial.toLowerCase() === "yes") {
+  if (isSpecial) {
     combinedArr = combinedArr.concat(specialCharacters);
   }
   return combinedArr;
@@ -81,6 +81,7 @@ function isValid() {
 
 
 function generatePassword() {
+  var password = "";
   for (i = 0; i < passwordLength; i++) {
     password = password.concat(combinedArr[Math.floor(Math.random() * combinedArr.length)]);
     console.log(password);
@@ -98,6 +99,7 @@ console.log(combinedArr)
 var generateBtn = document.querySelector("#generate");
 
 function writePassword() {
+  combinedArr = [];
   lengthFunc();
   uppercaseFunc();
   lowercaseFunc();
