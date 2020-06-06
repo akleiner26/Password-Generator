@@ -1,14 +1,4 @@
-var generateBtn = document.querySelector("#generate");
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-generateBtn.addEventListener("click", writePassword);
 var password = "";
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -22,10 +12,13 @@ function lengthFunc() {
   console.log(passwordLength);
   if (passwordLength >= 8 || passwordLength <= 128) {
     return passwordLength;
+  } else if (typeof passwordLength == "string"){
+    alert("Please Type a number")
+    lengthFunc();
   }
   console.log(passwordLength);
 }
-lengthFunc();
+
 
 
 function uppercaseFunc() {
@@ -37,7 +30,7 @@ function uppercaseFunc() {
   return combinedArr;
 }
 
-uppercaseFunc();
+
 console.log(combinedArr);
 
 function lowercaseFunc() {
@@ -49,7 +42,7 @@ function lowercaseFunc() {
   return combinedArr;
 }
 
-lowercaseFunc();
+
 console.log(combinedArr);
 
 function numbersFunc() {
@@ -61,7 +54,7 @@ function numbersFunc() {
   return combinedArr;
 }
 
-numbersFunc();
+
 console.log(combinedArr);
 
 function specialFunc() {
@@ -72,7 +65,7 @@ function specialFunc() {
   }
   return combinedArr;
 }
-specialFunc()
+
 
 function isValid() {
   while (combinedArr.length <= 0) {
@@ -85,7 +78,7 @@ function isValid() {
   }
 }
 
-isValid ();
+
 
 function generatePassword() {
   for (i = 0; i < passwordLength; i++) {
@@ -95,12 +88,29 @@ function generatePassword() {
   return password;
 }
 
-generatePassword ();
 console.log(password)
 
-alert("Your Random Password is " + password);
 
 console.log(password)
-
 
 console.log(combinedArr)
+
+var generateBtn = document.querySelector("#generate");
+
+function writePassword() {
+  lengthFunc();
+  uppercaseFunc();
+  lowercaseFunc();
+  numbersFunc();
+  specialFunc()
+  isValid ();
+  
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+
+  passwordText.value = password;
+
+}
+
+generateBtn.addEventListener("click", writePassword);
