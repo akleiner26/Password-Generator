@@ -19,7 +19,7 @@ Andrew Kleiner
 ## Screenshots of Site
 ### Upon Opening the Page
 ### Opening Page
-<img src="/assets/openingPage" alt="Opening Page Screenshot">
+<img src="/Assets/openingPage.png" alt="Opening Page Screenshot">
 
 ### Password Length Prompt
 <img src="/Assets/passwordLengthPrompt.png" alt="Password Length Prompt Screenshot">
