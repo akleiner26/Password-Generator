@@ -13,12 +13,12 @@ var password = "";
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialCharacters = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "}", "|", "~"];
+var specialCharacters = ["!", "#", "'","`", "$", "%", "&", "(", ")", "*", "+", ",", "-", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "{", "}", "|", "~"];
 var combinedArr = [];
 var passwordLength = "";
 
 function lengthFunc() {
-  var passwordLength = prompt("How many characters would you like your password to be? Value must be between 8 and 128");
+  passwordLength = prompt("How many characters would you like your password to be? Value must be between 8 and 128");
   console.log(passwordLength);
   if (passwordLength >= 8 || passwordLength <= 128) {
     return passwordLength;
@@ -91,11 +91,16 @@ function generatePassword() {
   for (i = 0; i < passwordLength; i++) {
     password = password.concat(combinedArr[Math.floor(Math.random() * combinedArr.length)]);
     console.log(password);
-    return password;
   }
-  alert("Your Random Password is " + password);
+  return password;
 }
-console.log(password)
 
 generatePassword ();
+console.log(password)
+
+alert("Your Random Password is " + password);
+
+console.log(password)
+
+
 console.log(combinedArr)
