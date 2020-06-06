@@ -9,57 +9,42 @@ var passwordLength = "";
 
 function lengthFunc() {
   passwordLength = prompt("How many characters would you like your password to be? Value must be between 8 and 128");
-  console.log(passwordLength);
   if (passwordLength >= 8 || passwordLength <= 128) {
     return passwordLength;
   } else if (typeof passwordLength == "string"){
     alert("Please Type a number")
     lengthFunc();
   }
-  console.log(passwordLength);
 }
 
 
 
 function uppercaseFunc() {
   var isUpperCase = confirm("Would you like for uppercase letters to be included?");
-  console.log(isUpperCase);
   if (isUpperCase) {
     combinedArr = combinedArr.concat(uppercase);
   }
   return combinedArr;
 }
 
-
-console.log(combinedArr);
-
 function lowercaseFunc() {
   var isLowerCase = confirm("Would you like lowercase letters to be included?");
-  console.log(isLowerCase);
   if (isLowerCase) {
     combinedArr = combinedArr.concat(lowercase);
   }
   return combinedArr;
 }
 
-
-console.log(combinedArr);
-
 function numbersFunc() {
   var isNumber = confirm("Would you like numbers to be included?");
-  console.log(isNumber);
   if (isNumber) {
     combinedArr = combinedArr.concat(numbers);
   }
   return combinedArr;
 }
 
-
-console.log(combinedArr);
-
 function specialFunc() {
   var isSpecial = confirm("Would you like special characters to be included?");
-  console.log(isSpecial);
   if (isSpecial) {
     combinedArr = combinedArr.concat(specialCharacters);
   }
@@ -84,17 +69,9 @@ function generatePassword() {
   var password = "";
   for (i = 0; i < passwordLength; i++) {
     password = password.concat(combinedArr[Math.floor(Math.random() * combinedArr.length)]);
-    console.log(password);
   }
   return password;
 }
-
-console.log(password)
-
-
-console.log(password)
-
-console.log(combinedArr)
 
 var generateBtn = document.querySelector("#generate");
 
